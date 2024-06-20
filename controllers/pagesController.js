@@ -24,4 +24,10 @@ module.exports = {
       title: "Transportation",
     });
   },
+  showMovie: (req, res) => {
+    res.render("_pages/movie", {
+      page: "movie",
+      title: "Movie",
+    });
+  },
 };

@@ -15,35 +15,34 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #191E56;
 }
 
 .ut-red {
-  color: #ab3135;
+  color: white;
 }
 
 .btn.ut-red {
-  background: #ab3135;
+  background: white;
   color: white;
-  border-color: #ab3135;
+  border-color: white;
 }
 
 .btn.ut-red:focus,
 .btn.ut-red:hover,
 .btn.ut-red:active,
 .btn.ut-red.active {
-  background: #9a2d2e;
-  border-color: #9a2d2e;
-  color: white;
+  background: #0568A1;
+  border-color: #0568A1;
 }
 
 span.ut-red {
-  background: #ab3135;
   color: white;
   padding: 2px 5px;
 }
 
 #index {
-  background: url(https://cdn.pixabay.com/photo/2019/10/04/12/05/train-4525444_960_720.jpg)
+  background: url(https://images.squarespace-cdn.com/content/v1/51cdafc4e4b09eb676a64e68/1540572123765-UVHPLNK0U2DYY1O9AR6X/io_world_head.jpg?format=2500w)
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -58,7 +57,7 @@ span.ut-red {
 }
 
 header {
-  background-color: white;
+  background-color: #191E56;
   border-bottom: 1px solid lightgray;
 }
 
@@ -101,7 +100,7 @@ nav .menu-item,
   float: left;
   line-height: 1;
   cursor: pointer; /* Aaron */
-  color: #ab3135;
+  color: white;
 }
 
 .menu-item:focus,
@@ -110,12 +109,12 @@ nav .menu-item,
 .menu-item.nav-link:focus,
 .menu-item.nav-link:hover,
 .menu-item.nav-link.active {
-  color: #9a2d2e;
+  color: #0568A1;
 }
 
 .menu-item:focus,
 .menu-item:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* New style */
@@ -135,7 +134,7 @@ nav a {
   z-index: 1050;
   /* right: 20px; */
   display: none;
-  float: right; /* Aaron */
+  float: right; 
 }
 
 .cover-content {
@@ -240,9 +239,9 @@ td {
 .btn.profileImg-edit-btn:focus,
 .btn.profileImg-edit-btn:active,
 .btn.profileImg-edit-btn.active {
-  background: #ab3135;
+  background: white;
   color: white;
-  border-color: #ab3135;
+  border-color: white;
 }
 
 /* https://raybo.org/posts/2021-03-27-consistent-height-carousels-with-css-gradients-by-hacking-the-bootstrap-5-carousel/ */
@@ -283,3 +282,4 @@ td {
 .img-404 img {
   max-height: 50vh;
 }
+

@@ -1,0 +1,44 @@
+<!-- app.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <!-- Owl Carousel CSS 및 다른 필요한 CSS 파일 -->
+    <link rel="stylesheet" href="owl.carousel.css">
+    <style>
+        /* 여기에 기존의 CSS 스타일들을 추가합니다 */
+    </style>
+</head>
+<body>
+
+    <!-- 여기에 기존의 HTML 구조를 유지하고 EJS 변수를 적용합니다 -->
+    <div class="custom-carousel owl-carousel">
+        <% for (let i = 0; i < items.length; i++) { %>
+            <div class="item">
+                <!-- 여기에 아이템의 내용을 출력합니다 -->
+                <%= items[i].content %>
+            </div>
+        <% } %>
+    </div>
+
+    <!-- Owl Carousel JS 및 jQuery 라이브러리 -->
+    <script src="jquery.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".custom-carousel").owlCarousel({
+                autoWidth: true,
+                loop: true
+            });
+
+            $(".custom-carousel .item").click(function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

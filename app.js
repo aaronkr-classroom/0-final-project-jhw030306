@@ -18,7 +18,7 @@ const pagesController = require("./controllers/pagesController"),
   usersController = require("./controllers/usersController"),
   coursesController = require("./controllers/coursesController"),
   talksController = require("./controllers/talksController"),
-  trainsController = require("./controllers/trainsController"),
+  moviesController = require("./controllers/moviesController"),
   errorController = require("./controllers/errorController");
 
 /**
@@ -27,19 +27,17 @@ const pagesController = require("./controllers/pagesController"),
  * =====================================================================
  */
 
-// 애플리케이션에 Mongoose 설정
-const mongoose = require("mongoose"), // mongoose를 요청
-  dbName = "ut-nodejs";
+//애플리케이션에 Mongoose 설정
+const mongoose = require("mongoose"); // mongoose를 요청
 
 // 데이터베이스 연결 설정
-mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`, {
-  useNewUrlParser: true,
+mongoose.connect(
+  "mongodb+srv://jhw030306:1234*@ut-node.pzxaori.mongodb.net/?retryWrites=true&w=majority&appName=UT-Node", {
 });
 
-// 연결되면 메시지를 보냄
 const db = mongoose.connection;
-db.once("open", () => {
-  console.log(`Connected to ${dbName} MongoDB using Mongoose!`);
+db.once("opne", () => {
+  console.log("Connected to MONGODB!!");
 });
 
 /**
@@ -48,7 +46,7 @@ db.once("open", () => {
  * =====================================================================
  */
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3002);
 
 // ejs 레이아웃 렌더링
 app.set("view engine", "ejs"); // ejs를 사용하기 위한 애플리케이션 세팅
@@ -74,6 +72,7 @@ app.use("/", router); // 라우터를 애플리케이션에 추가
 router.get("/", pagesController.showHome); // 홈 페이지 위한 라우트 추가
 router.get("/about", pagesController.showAbout); // 코스 페이지 위한 라우트 추가
 router.get("/transportation", pagesController.showTransportation); // 교통수단 페이지 위한 라우트 추가
+router.get("/movie", pagesController.showMovie);
 
 /**
  * Subscribers
@@ -177,27 +176,28 @@ router.delete(
   talksController.redirectView
 );
 
+
 /**
- * Trains
+ * Movies
  */
-router.get("/trains", trainsController.index, trainsController.indexView); // index 라우트 생성
-router.get("/trains/new", trainsController.new); // 생성 폼을 보기 위한 요청 처리
+router.get("/movies", moviesController.index, moviesController.indexView); // index 라우트 생성
+router.get("/movies/new", moviesController.new); // 생성 폼을 보기 위한 요청 처리
 router.post(
-  "/trains/create",
-  trainsController.create,
-  trainsController.redirectView
+  "/movies/create",
+  moviesController.create,
+  moviesController.redirectView
 ); // 생성 폼에서 받아온 데이터의 처리와 결과를 사용자 보기 페이지에 보여주기
-router.get("/trains/:id", trainsController.show, trainsController.showView);
-router.get("/trains/:id/edit", trainsController.edit); // viewing을 처리하기 위한 라우트 추가
+router.get("/movies/:id", moviesController.show, moviesController.showView);
+router.get("/movies/:id/edit", moviesController.edit); // viewing을 처리하기 위한 라우트 추가
 router.put(
-  "/trains/:id/update",
-  trainsController.update,
-  trainsController.redirectView
+  "/movies/:id/update",
+  moviesController.update,
+  moviesController.redirectView
 ); // 편집 폼에서 받아온 데이터의 처리와 결과를 사용자 보기 페이지에 보여주기
 router.delete(
-  "/trains/:id/delete",
-  trainsController.delete,
-  trainsController.redirectView
+  "/movies/:id/delete",
+  moviesController.delete,
+  moviesController.redirectView
 );
 
 /**
