@@ -1,41 +1,47 @@
-<!-- app.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Title Here</title>
-    <!-- Owl Carousel CSS 및 다른 필요한 CSS 파일 -->
-    <link rel="stylesheet" href="owl.carousel.css">
-    <style>
-        /* 여기에 기존의 CSS 스타일들을 추가합니다 */
-    </style>
 </head>
 <body>
-
-    <!-- 여기에 기존의 HTML 구조를 유지하고 EJS 변수를 적용합니다 -->
-    <div class="custom-carousel owl-carousel">
-        <% for (let i = 0; i < items.length; i++) { %>
-            <div class="item">
-                <!-- 여기에 아이템의 내용을 출력합니다 -->
-                <%= items[i].content %>
-            </div>
-        <% } %>
-    </div>
-
-    <!-- Owl Carousel JS 및 jQuery 라이브러리 -->
-    <script src="jquery.min.js"></script>
-    <script src="owl.carousel.min.js"></script>
+    <section class="movie">
+        <h2 class="movie-title">Inside Out</h2>
+        <div class="character">
+            <% for (let i = 0; i < items.length; i++) { %>
+                <div class="item" style="background-image: url(<%= items[i].image %>)">
+                    <div class="item-desc">
+                        <h3><%= items[i].name %></h3>
+                        <p><%= items[i].quote1 %><br><%= items[i].quote2 %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </section>
     <script>
         $(document).ready(function () {
-            $(".custom-carousel").owlCarousel({
+            $(".character").owlCarousel({
                 autoWidth: true,
-                loop: true
+                loop: true,
+                items: 3, // 보여질 아이템 개수
+                margin: 20, // 아이템 간의 간격
+                center: true, // 중앙 정렬
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
             });
 
-            $(".custom-carousel .item").click(function () {
-                $(".custom-carousel .item").not($(this)).removeClass("active");
+            $(".item").click(function () {
+                $(".item").not($(this)).removeClass("active");
                 $(this).toggleClass("active");
             });
         });

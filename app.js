@@ -46,7 +46,7 @@ db.once("opne", () => {
  * =====================================================================
  */
 
-app.set("port", process.env.PORT || 3002);
+app.set("port", process.env.PORT || 3005);
 
 // ejs 레이아웃 렌더링
 app.set("view engine", "ejs"); // ejs를 사용하기 위한 애플리케이션 세팅
@@ -127,6 +127,19 @@ router.delete(
   usersController.delete,
   usersController.redirectView
 );
+
+app.use((req, res, next) => {
+  // 응답 객체상에서 플래시 메시지의 로컬 flashMessages로의 할당
+  res.locals.flashMessages = req.flash(); // flash 메시지를 뷰에서 사용할 수 있도록 설정
+
+  /**
+   * Listing 24.7 (p. 358)
+   * 사용자 정의 미들웨어로 로컬 변수 추가
+   */
+  res.locals.loggedIn = req.isAuthenticated(); // 로그인 여부를 확인하는 불리언 값을 로컬 변수에 추가
+  res.locals.currentUser = req.user; // 현재 사용자를 로컬 변수에 추가
+  next();
+});
 
 /**
  * Courses
