@@ -1,55 +1,40 @@
-<!-- layout.ejs -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Project | Insideout <%= title %></title> <!-- title태그를 완성하십시오 -->
+  <meta name="author" content="Jihyewon" /> <!-- 자기 이름을 작성하십시오 -->
+  
+  <!-- CSS 파일에 대한 link테그를 완성하십시오 -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Compiled: https://codepen.io/fionnachan/pen/EvaqOB -->
+  <!-- <link rel="stylesheet" href="css/confetti.css" /> -->
+  <link rel="stylesheet" media="(max-width: 768px)" href="/css/style.small.css" />
+  
+  <!-- @TODO: -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="/css/aaronkr.css" /> -->
+</head>
+<body>
+  <%- include('_partials/_header') %>
+  <%- body %> <!-- 이 부분에서 HTML 콘텐츠를 추가할 수 있습니다 -->
+  <%- include('_partials/_footer') %>
 
-    <!-- @TODO: -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Final Project | Insideout <%= title %></title>
-    <!-- @TODO: title태그를 완성하십시오 -->
-
-    <meta name="author" content="Jihyewon" />
-    <!-- @TODO: 자기 이름을 작성하십시오 -->
-
-    <!-- @TODO: CSS 파일에 대한 link테그를 완성하십시오 -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <!-- Compiled: https://codepen.io/fionnachan/pen/EvaqOB -->
-    <!-- <link rel="stylesheet" href="css/confetti.css" /> -->
-    <link
-      rel="stylesheet"
-      media="(max-width: 768px)"
-      href="/css/style.small.css"
-    />
-
-    <!-- @TODO: -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="/css/aaronkr.css" /> -->
-  </head>
-  <body>
-    <%- include('_partials/_header') %> <%- body %> <%-
-    include('_partials/_footer') %>
-    
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/js/jquery-3.7.0.slim.js"></script>
-    
-    <!-- Popper Development version -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-
-    <!-- Popper Production version
-    <script src="https://unpkg.com/@popperjs/core@2"></script> -->
-
-    <!-- Bootstrap -->
-    <script src="/js/bootstrap.bundle.min.js"></script>
-
-    <!-- @TODO: JS 파일에 대한 script테그를 완성하십시오 -->
-    <script src="/js/functions.js"></script>
-  </body>
-
-  <!--
-    [노트] 레이아웃 파일은 방문하는 모든 페이지상에서 렌더링된다.
-    한 번 < %- body % >의 전후로 HTML 콘텐츠를 추가해보라. 
-    모든 페이지에 추가 내용이 반영될 것이다.
---></html>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/js/jquery-3.7.0.slim.js"></script>
+  
+  <!-- Popper Development version -->
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+  
+  <!-- Popper Production version -->
+  <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+  
+  <!-- Bootstrap -->
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- JS 파일에 대한 script테그를 완성하십시오 -->
+  <script src="/js/functions.js"></script>
+</body>
+</html>

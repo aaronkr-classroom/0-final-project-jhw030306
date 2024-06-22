@@ -2,8 +2,6 @@
 "use strict";
 
 /**
- * Listing 18.9 (p. 268-269)
- * Listing 18.11 (p. 271)
  * moviesController.js에서 인덱스 액션 생성과 index 액션의 재방문
  */
 const Movie = require("../models/Movie"); // 사용자 모델 요청

@@ -5,21 +5,22 @@ body {
 }
 
 .ut-red {
-  color: white;
+  color: #5e9cff;
 }
 
 .btn.ut-red {
   background: white;
-  color: white;
-  border-color: white;
+  color: #191E56;
+  border-color: #191E56;;
 }
 
 .btn.ut-red:focus,
 .btn.ut-red:hover,
 .btn.ut-red:active,
 .btn.ut-red.active {
-  background: #0568A1;
-  border-color: #0568A1;
+  background: #191E56;
+  color: white;
+  border-color: #191E56;;
 }
 
 span.ut-red {
@@ -171,8 +172,7 @@ figure.user-img img {
   object-position: center;
 }
 
-th,
-td {
+th,td {
   /* text-align: center !important; */
 }
 
@@ -193,13 +193,13 @@ td {
   position: relative;
 }
 
-/* .user-edit-form .profileImg-row {
+.user-edit-form .profileImg-row {
   position: absolute;
   background: white;
   top: 150px;
   left: -50px;
   box-shadow: 1px 1px 20px gray;
-} */
+} 
 
 .btn.profileImg-edit-btn {
   width: 40px;
@@ -269,6 +269,21 @@ td {
   max-height: 50vh;
 }
 
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-signin .logo {
+  margin: auto;
+  float: none;
+}
+
+
 /* 기본 설정 */
 * {
   margin: 0;
@@ -276,10 +291,6 @@ td {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
 
 /* 섹션 스타일 */
 .movie {
@@ -298,7 +309,7 @@ body {
   height: 400px;
   margin: 20px;
   background-size: cover;
-  background-position: center;
+  background-position: 20% 50%;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
